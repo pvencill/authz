@@ -1,0 +1,18 @@
+{
+  "name": "authn",
+  "version": "0.0.0",
+  "description": "Platform and context agnostic authorization library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "authorization",
+    "nodejs"
+  ],
+  "author": "Paul Vencill",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
