@@ -1,5 +1,5 @@
-# AuthN #
-AuthN is a fairly simple authorization library for use in Node regardless of the context or your data model.  It takes string representations of your users and resources and validates whether or not you've granted access.  Default storage is in-memory with JSON persistence, but this is configurable by implementing a fairly simple API.
+# AuthZ #
+AuthZ is a fairly simple authorization library for use in Node regardless of the context or your data model.  It takes string representations of your users and resources and validates whether or not you've granted access.  Default storage is in-memory with JSON persistence, but this is configurable by implementing a fairly simple API.
 
 ## Rights and Roles ##
 Rights are stored in a bitwise fashion, which you can extend however you like.  We have defined enumerations of default rights and roles, but they are for convenience only; within your system you can arrange the permission bits in whatever way is meaningful to you.
@@ -8,10 +8,10 @@ Rights are stored in a bitwise fashion, which you can extend however you like.  
 
 
 ```js
-var AuthN = require('authn');
+var AuthZ = require('authz');
 
 // Minimal configuration, all rules are kept in memory while your process is running
-var auth = new AuthN(); 
+var auth = new AuthZ(); 
 
 // Grant a user 'read' rights to something
 auth.grant('projects', 'schmedlap', AuthN.RIGHTS.READ);
