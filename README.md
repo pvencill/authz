@@ -14,24 +14,24 @@ var AuthZ = require('authz');
 var auth = new AuthZ(); 
 
 // Grant a user 'read' rights to something
-auth.grant('projects', 'schmedlap', AuthN.RIGHTS.READ, function(e, result){
+auth.grant('projects', 'schmedlap', AuthZ.RIGHTS.READ, function(e, result){
   // handle result if needed.
 });
 
 // Check that the user can 'read' 'projects'
-auth.check('projects', 'schmedlap', AuthN.RIGHTS.READ, function(e, authorized){
+auth.check('projects', 'schmedlap', AuthZ.RIGHTS.READ, function(e, authorized){
   // authorized is 'true' if this is called after rights were granted
 });
 
 // Assign schmedlap as an ADMIN (grants READ, WRITE, and DELETE rights)
-auth.grant('projects', 'schmedlap', AuthN.ROLES.ADMIN, console.log);
+auth.grant('projects', 'schmedlap', AuthZ.ROLES.ADMIN, console.log);
 // should console out null, and the rights object saved
 
 // Oops, meant to only make him a MEMBER (READ, WRITE).  Note that 'grant' does a bitwise &,so if I grant schmedlap the MEMBER role right now, it won't remove his DELETE rights, so I need to do this instead:
-auth.set('projects', 'schmedlap', AuthN.ROLES.MEMBER, console.log);
+auth.set('projects', 'schmedlap', AuthZ.ROLES.MEMBER, console.log);
 
 // Or, I could have instead explicitly removed the DELETE permission
-auth.revoke('projects', 'schmedlap', AuthN.RIGHTS.DELETE, console.log);
+auth.revoke('projects', 'schmedlap', AuthZ.RIGHTS.DELETE, console.log);
 ```
 
 
