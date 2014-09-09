@@ -4,7 +4,7 @@
   "description": "Platform and context agnostic authorization library",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha --require should"
   },
   "repository": "git@github.com:pvencill/authz.git",
   "keywords": [
@@ -17,6 +17,7 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
   }
 }
