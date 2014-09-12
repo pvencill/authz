@@ -49,4 +49,16 @@ describe('authz', function(){
             doAndCheck('grant','projects', 'schmedlap', AuthZ.ROLES.GUEST, true, done);
         });
     });
+
+    describe('revoke role', function(){
+        it('should revoke ADMIN rights', function(done){
+            doAndCheck('revoke','projects', 'schmedlap', AuthZ.RIGHTS.READ, false, done);
+        });
+        it('should revoke MEMBER rights', function(done){
+            doAndCheck('revoke','projects', 'schmedlap', AuthZ.RIGHTS.MEMBER, false,done);
+        });
+        it('should revoke GUEST rights', function(done){
+            doAndCheck('revoke','projects', 'schmedlap', AuthZ.RIGHTS.GUEST,  false, done);
+        });
+    });
 });
