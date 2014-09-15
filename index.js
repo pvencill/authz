@@ -1,1 +1,1 @@
-module.exports = require('./lib/authn');
+module.exports = require('./lib/authz');
