@@ -1,6 +1,6 @@
 {
   "name": "authn",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Platform and context agnostic authorization library",
   "main": "index.js",
   "scripts": {
