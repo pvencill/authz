@@ -37,3 +37,11 @@ auth.revoke('projects', 'schmedlap', AuthZ.RIGHTS.DELETE, console.log);
 
 ## Options ##
 DefaultDeny option is set by default; unless explicitly set to false this option will result in checks returning false for any resource checked which doesn't exist in the permissions map.
+
+## MongoDB ##
+MongoDB may optionally be used for storage. The `MongoStore()` accepts mongoose connection parameters.
+
+Example:
+```js
+var auth = new AuthZ(new MongoStore('mongodb://localhost/authz_test'));
+```
